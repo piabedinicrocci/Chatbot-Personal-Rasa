@@ -1,0 +1,62 @@
+version: "3.1"
+
+intents:
+  - saludo
+  - despedida
+  - bot
+  - proximos_pasos
+  - lugar_origen
+  - fecha_nacimiento
+  - signo_zodiacal
+  - estudio_en_curso
+  - datos_estudio
+  - materias_cursando
+  - finales_pendientes
+
+entities:
+  - nombre_persona
+
+slots:
+  nombre:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: nombre_persona
+
+responses:
+  utter_saludo:
+  - text: "Hola! Soy Pia! Quien eres tu?"
+
+  utter_goodbye:
+  - text: "Adios"
+
+  utter_iamabot:
+  - text: "Soy un bot, impulsado por Rasa."
+
+  utter_proximos_pasos:
+  - text: "Un gusto {nombre}! Que quieres saber acerca de mi?"
+
+  utter_lugar_origen:
+  - text: "Soy de Azul, pcia. de Bs As, pero actualmente vivo en Tandil"
+
+  utter_fecha_nacimiento:
+  - text: "Mi cumple es el 8 de febrero, naci en 2022 (podras deducir mi edad :D)"
+
+  utter_signo_zodiacal:
+  - text: "Soy Acuario, pero no creo mucho en esas cosas ;) "
+
+  utter_estudio_en_curso:
+  - text: "Estoy estudiando Ingenieria de Sistemas y TUDAI (Tecnicatura Univ. en Desarrollo de Aplicaciones Informaticas)"
+
+  utter_datos_estudio:
+  - text: "Yyy bastante bien, empece la carrera en 2020, voy al dia con las cursadas y debo 2 finales del cuatrimestre pasado"
+
+  utter_materias_cursando:
+  - text: "Estoy cursando las 5 de 3er año de Sistemas: Programacion Exploratoria, Investigacion Operativa, Lenguajes de Programacion, Bases de Datos y Sistemas Operativos"
+
+  utter_finales_pendientes:
+  - text: "Me quedan por dar Estructuras de Almacenamiento de Datos y Programacion Orientada a Objetos"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

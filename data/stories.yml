@@ -1,0 +1,31 @@
+version: "3.1"
+
+stories:
+
+- story: presentacion
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: proximos_pasos
+  - action: utter_proximos_pasos
+
+- story: datos_personales_story
+  steps:
+  - intent: lugar_origen
+  - action: utter_lugar_origen
+  - intent: fecha_nacimiento
+  - action: utter_fecha_nacimiento
+  - intent: signo_zodiacal
+  - action: utter_signo_zodiacal
+
+- story: datos_academicos_story
+  steps:
+  - intent: estudio_en_curso
+  - action: utter_estudio_en_curso
+  - intent: datos_estudio
+  - action: utter_datos_estudio
+  - intent: materias_cursando
+  - action: utter_materias_cursando
+  - intent: finales_pendientes
+  - action: utter_finales_pendientes
+

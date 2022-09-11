@@ -1,0 +1,76 @@
+version: "3.1"
+
+nlu:
+- intent: saludo
+  examples: |
+    - hola!
+    - hola
+    - holis
+    - holaaa
+    - buenos dias
+    - buenas tardes
+    - buenas noches
+
+- intent: despedida
+  examples: |
+    - chau
+    - adios
+    - chausito
+    - chauchis
+    - adioos
+    - seguimos luego
+
+- intent: bot
+  examples: |
+    - sos un bot?
+    - sos un humano?
+    - estoy hablando con un bot?
+    - estoy hablando con un humano?
+
+- intent: proximos_pasos
+  examples: |
+    - [pichu](nombre_persona)
+    - soy [pichu](nombre_persona)
+    - mi nombre es [pichu](nombre_persona)
+
+- intent: lugar_origen
+  examples: |
+    - de donde sos?
+    - de donde eres?
+    - donde naciste?
+
+- intent: fecha_nacimiento
+  examples: |
+    - cuando naciste?
+    - cual es tu fecha de nacimiento?
+    - que edad tienes?
+
+- intent: signo_zodiacal
+  examples: |
+    - cual es tu signo del zodiaco?
+    - cual es tu signo zodiacal?
+
+- intent: estudio_en_curso
+  examples: |
+    - que haces de tu vida?
+    - que estudias?
+    - que carrera estas estudiando?
+    - estas estudiando?
+
+- intent: datos_estudio
+  examples: |
+    - como te esta yendo?
+    - como te va?
+    - como venis con eso?
+
+- intent: materias_cursando
+  examples: |
+    - que materias estas cursando?
+    - cuales son las materias que estas cursando actualmente?
+    - que materias cursas actualmente?
+
+- intent: finales_pendientes
+  examples: |
+    - que finales te quedan por dar?
+    - cuales son los finales que debes?
+    - que finales te quedaron pendientes?
