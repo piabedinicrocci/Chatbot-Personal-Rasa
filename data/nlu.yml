@@ -20,18 +20,11 @@ nlu:
     - adioos
     - seguimos luego
 
-- intent: bot
-  examples: |
-    - sos un bot?
-    - sos un humano?
-    - estoy hablando con un bot?
-    - estoy hablando con un humano?
-
 - intent: proximos_pasos
   examples: |
-    - [pichu](nombre_persona)
-    - soy [pichu](nombre_persona)
-    - mi nombre es [pichu](nombre_persona)
+    - [pichu](nombre)
+    - soy [pichu](nombre)
+    - mi nombre es [pichu](nombre)
 
 - intent: lugar_origen
   examples: |
@@ -63,14 +56,37 @@ nlu:
     - como te va?
     - como venis con eso?
 
-- intent: materias_cursando
-  examples: |
-    - que materias estas cursando?
-    - cuales son las materias que estas cursando actualmente?
-    - que materias cursas actualmente?
-
 - intent: finales_pendientes
   examples: |
     - que finales te quedan por dar?
     - cuales son los finales que debes?
     - que finales te quedaron pendientes?
+
+- intent: materias_cursando
+  examples: |
+    - que materias estas cursando?
+    - cuales son las materias que estas cursando actualmente?
+    - que materias cursas actualmente?
+    - que materias cursas?
+    - cuales materias cursas?
+
+- intent: estado_materia
+  examples: |
+    - como venis con [Programacion Exploratoria](materia)?
+    - como venis con [Investigacion Operativa](materia)?
+    - como venis con [Lenguajes de Programacion](materia)?
+    - como venis con [Bases de Datos](materia)?
+    - como venis con [Sistemas Operativos](materia)?
+
+- intent: horarios_materia
+  examples: |
+    - cuales son los horarios de esa materia?
+    - en que horarios se cursa?
+    - cuales son los horarios?
+    - cuando se cursa?
+    - horarios
+
+- regex: materia
+  examples: |
+    - ((([aA-zZ]\w+ *){1, })+(, )*){1, }
+  #acepta espacios y comas

@@ -14,14 +14,48 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
 
-class ActionHelloWorld(Action):
+class ActionEstadoMateria(Action):
 
-   def name(self) -> Text:
-        return "action_hello_world"
+     def name(self) -> Text:
+         return "action_estado_materia"
 
-   def run(self, dispatcher: CollectingDispatcher,
-           tracker: Tracker,
-           domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+     def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+         materia= tracker.latest_message['entities'][0]['value']
+         if str(materia)=="Programacion Exploratoria":
+            message="Voy genial! He entendido todo hasta ahora"
+         elif str(materia)=="Investigacion Operativa":
+            message="Voy re bien! Estoy al dia con los practicos"
+         elif str(materia)=="Lenguajes de Programacion":
+            message="Estoy un poco atrasada :c"
+         elif str(materia)=="Bases de Datos":
+            message="Me falta hacer el tp2 y terminar el tp3"
+         elif str(materia)=="Sistemas Operativos":
+            message="Me queda por ver la ultima clase subida"
+         dispatcher.utter_message(text=str(message))
+         return [SlotSet("materia",materia)]
+         return []
 
-        dispatcher.utter_message(text="Hello World!")
-        return []
+class ActionHorariosMateria(Action):
+
+     def name(self) -> Text:
+         return "action_horarios_materia"
+
+     def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+         materia= tracker.get_slot("materia")
+         message="Los horarios de " + materia + "son "
+         if str(materia)=="Programacion Exploratoria":
+            message=message+"miercoles de 13hs a 16hs"
+         elif str(materia)=="Investigacion Operativa":
+            message=message+"lunes de 15hs a 17hs y martes de 16hs a 18hs"
+         elif str(materia)=="Lenguajes de Programacion":
+            message=message+"martes de 13hs a 16hs y jueves de 14hs a 17hs"
+         elif str(materia)=="Bases de Datos":
+            message=message+"lunes de 9hs a 13hs y miercoles de 9hs a 12hs"
+         elif str(materia)=="Sistemas Operativos":
+            message=message+"martes de 10hs a 12hs y jueves de 9hs a 12hs"
+         dispatcher.utter_message(text=str(message))
+         return []

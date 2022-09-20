@@ -24,8 +24,26 @@ stories:
   - action: utter_estudio_en_curso
   - intent: datos_estudio
   - action: utter_datos_estudio
-  - intent: materias_cursando
-  - action: utter_materias_cursando
+
+- story: finales_story
+  steps:
   - intent: finales_pendientes
   - action: utter_finales_pendientes
+
+- story: materias_story
+  steps:
+  - intent: materias_cursando
+  - action: utter_materias_cursando
+
+- story: materia_particular_story
+  steps:
+  - intent: estado_materia
+  - action: action_estado_materia
+  - intent: horarios_materia
+  - action: action_horarios_materia
+
+- story: saludo_final
+  steps:
+  - intent: despedida
+  - action: utter_despedida
 
