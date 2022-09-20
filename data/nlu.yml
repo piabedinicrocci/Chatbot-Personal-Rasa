@@ -23,8 +23,9 @@ nlu:
 - intent: proximos_pasos
   examples: |
     - [pichu](nombre)
-    - soy [pichu](nombre)
-    - mi nombre es [pichu](nombre)
+    - soy tincho
+    - mi nombre es david
+    - me llamo martin
 
 - intent: lugar_origen
   examples: |
@@ -90,3 +91,11 @@ nlu:
   examples: |
     - ((([aA-zZ]\w+ *){1, })+(, )*){1, }
   #acepta espacios y comas
+
+- lookup: nombre
+  examples: |
+    - pichu
+    - martin
+    - tincho
+    - david
+    - juan francisco

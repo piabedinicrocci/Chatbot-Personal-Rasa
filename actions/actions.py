@@ -46,7 +46,7 @@ class ActionHorariosMateria(Action):
              tracker: Tracker,
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          materia= tracker.get_slot("materia")
-         message="Los horarios de " + materia + "son "
+         message="Los horarios de " + materia + " son: "
          if str(materia)=="Programacion Exploratoria":
             message=message+"miercoles de 13hs a 16hs"
          elif str(materia)=="Investigacion Operativa":
