@@ -55,7 +55,7 @@ nlu:
   examples: |
     - como te esta yendo?
     - como te va?
-    - como venis con eso?
+    - como te esta resultando?
 
 - intent: finales_pendientes
   examples: |
@@ -79,12 +79,19 @@ nlu:
     - como venis con [Bases de Datos](materia)?
     - como venis con [Sistemas Operativos](materia)?
 
+- intent: opinion_materia
+  examples: |
+    - que opinas de esa materia?
+    - que opinas acerca de la materia?
+    - que opinion tenes de la materia?
+
 - intent: horarios_materia
   examples: |
     - cuales son los horarios de esa materia?
     - en que horarios se cursa?
     - cuales son los horarios?
     - cuando se cursa?
+    - que dias se cursa?
     - horarios
   
 - intent: materias_de

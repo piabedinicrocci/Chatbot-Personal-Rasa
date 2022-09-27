@@ -28,40 +28,35 @@ class ActionEstadoMateria(Action):
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          materia= tracker.latest_message['entities'][0]['value']
          if str(materia)=="Programacion Exploratoria":
-            message="Voy genial! He entendido todo hasta ahora"
+            message="Voy genial! Al dia!"
          elif str(materia)=="Investigacion Operativa":
             message="Voy re bien! Estoy al dia con los practicos"
          elif str(materia)=="Lenguajes de Programacion":
             message="Estoy un poco atrasada :c"
          elif str(materia)=="Bases de Datos":
-            message="Me falta hacer el tp2 y terminar el tp3"
+            message="Me falta terminar tp2, tp3 y hacer tp4"
          elif str(materia)=="Sistemas Operativos":
-            message="Me queda por ver la ultima clase subida"
+            message="Estoy al dia!"
          dispatcher.utter_message(text=str(message))
          return [SlotSet("materia",materia)]
 
-#class ActionHorariosMateria(Action):
+class ActionOpinionMateria(Action):
 
-#     def name(self) -> Text:
-#         return "action_horarios_materia"
+     def name(self) -> Text:
+         return "action_opinion_materia"
 
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         materia= tracker.get_slot("materia")
-#         message="Los horarios de " + materia + " son: "
-#         if str(materia)=="Programacion Exploratoria":
-#            message=message+"miercoles de 13hs a 16hs"
-#         elif str(materia)=="Investigacion Operativa":
-#            message=message+"lunes de 15hs a 17hs y martes de 16hs a 18hs"
-#         elif str(materia)=="Lenguajes de Programacion":
-#            message=message+"martes de 13hs a 16hs y jueves de 14hs a 17hs"
-#         elif str(materia)=="Bases de Datos":
-#            message=message+"lunes de 9hs a 13hs y miercoles de 9hs a 12hs"
-#         elif str(materia)=="Sistemas Operativos":
-#            message=message+"martes de 10hs a 12hs y jueves de 9hs a 12hs"
-#         dispatcher.utter_message(text=str(message))
-#         return []
+     def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+         materia= tracker.get_slot("materia")
+         if str(materia)=="Programacion Exploratoria" or str(materia)=="Bases de Datos":
+            message="Me encanta! me parece super util y necesaria"
+         elif str(materia)=="Investigacion Operativa":
+            message="Me gusta! creo que tiene contenidos aplicables en el futuro"
+         elif str(materia)=="Lenguajes de Programacion" or str(materia)=="Sistemas Operativos":
+            message="Se me hace un poco larga y tediosa"
+         dispatcher.utter_message(text=str(message))
+         return []
 
 class OperarArchivo():
 
@@ -89,12 +84,30 @@ class ActionExtraerDatosHorarios(Action):
         materia= tracker.get_slot("materia")
         horarios= OperarArchivo.cargarArchivo()
         if materia in horarios:
-            mensaje="Los dias en que se cursa son: "+horarios[materia]['dia']+" de "+horarios[materia]['horario']
+            mensaje=f"{materia} se cursa los "+horarios[materia]['dia']+" de "+horarios[materia]['horario']
             dispatcher.utter_message(text=str(mensaje))
         else:
             mensaje= "No es una materia que reconozca"
             dispatcher.utter_message(text=str(mensaje))
         return []
+
+class ActionPROLOGMateriasCursando(Action):
+
+    def name(self) -> Text:
+        return "action_materias_cursando"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            with PrologMQI(port=8000) as mqi:
+                with mqi.create_thread() as prolog_thread:
+                        prolog_thread.query_async(r"consult('C:\\RASA Personal\\data\\PE.pl')", find_all=False)
+                        prolog_thread.query_async(f"materias_cursando(Lista)", find_all=False)
+                        result = prolog_thread.query_async_result()[0]['Lista']
+                        dispatcher.utter_message(f"Estoy cursando las 5 del 2do cuatri de 3er año de Sistemas: \n")
+                        for materia in result:
+                            dispatcher.utter_message(text= f"- {materia}")
+            return[]
 
 class ActionPROLOGMateriasAnio(Action):
 
@@ -116,22 +129,4 @@ class ActionPROLOGMateriasAnio(Action):
                                 dispatcher.utter_message(text= f"- {materia}")
                         else:
                             dispatcher.utter_message(text= "La duracion de la carrera es de 5 años!")
-            return[]
-
-class ActionPROLOGMateriasCursando(Action):
-
-    def name(self) -> Text:
-        return "action_materias_cursando"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            with PrologMQI(port=8000) as mqi:
-                with mqi.create_thread() as prolog_thread:
-                        prolog_thread.query_async(r"consult('C:\\RASA Personal\\data\\PE.pl')", find_all=False)
-                        prolog_thread.query_async(f"materias_cursando(Lista)", find_all=False)
-                        result = prolog_thread.query_async_result()[0]['Lista']
-                        dispatcher.utter_message(f"Estoy cursando las 5 del 2do cuatri de 3er año de Sistemas: \n")
-                        for materia in result:
-                            dispatcher.utter_message(text= f"- {materia}")
             return[]

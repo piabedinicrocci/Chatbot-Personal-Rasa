@@ -11,6 +11,13 @@ stories:
       - nombre
   - action: utter_proximos_pasos
 
+- story: saludo_final
+  steps:
+  - intent: despedida
+    entities:
+      - nombre
+  - action: utter_despedida
+
 - story: datos_personales_story
   steps:
   - intent: lugar_origen
@@ -26,11 +33,13 @@ stories:
   - action: utter_estudio_en_curso
   - intent: datos_estudio
   - action: utter_datos_estudio
-
-- story: finales_story
-  steps:
   - intent: finales_pendientes
   - action: utter_finales_pendientes
+
+- story: materias_cursando_story
+  steps:
+  - intent: materias_cursando
+  - action: action_materias_cursando
 
 - story: materia_particular_story
   steps:
@@ -38,13 +47,10 @@ stories:
     entities:
       - materia
   - action: action_estado_materia
+  - intent: opinion_materia
+  - action: action_opinion_materia
   - intent: horarios_materia
   - action: action_horarios_materia
-
-- story: materias_cursando_story
-  steps:
-  - intent: materias_cursando
-  - action: action_materias_cursando
 
 - story: materias_de_story
   steps:
@@ -52,11 +58,4 @@ stories:
     entities:
       - anio
   - action: action_materias_de_anio
-
-- story: saludo_final
-  steps:
-  - intent: despedida
-    entities:
-      - nombre
-  - action: utter_despedida
 

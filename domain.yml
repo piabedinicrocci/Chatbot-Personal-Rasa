@@ -12,6 +12,7 @@ intents:
   - finales_pendientes
   - materias_cursando
   - estado_materia
+  - opinion_materia
   - horarios_materia
   - materias_de
 
@@ -22,6 +23,7 @@ entities:
 
 actions:
   - action_estado_materia
+  - action_opinion_materia
   - action_horarios_materia
   - action_materias_cursando
   - action_materias_de_anio
@@ -67,9 +69,6 @@ responses:
 
   utter_finales_pendientes:
   - text: "Me quedan por dar Estructuras de Almacenamiento de Datos y Programacion Orientada a Objetos"
-
-#  utter_materias_cursando:
-#  - text: "Estoy cursando las 5 del 2do cuatri de 3er año de Sistemas: Programacion Exploratoria, Investigacion Operativa, Lenguajes de Programacion, Bases de Datos y Sistemas Operativos"
 
 session_config:
   session_expiration_time: 60
