@@ -86,6 +86,13 @@ nlu:
     - cuales son los horarios?
     - cuando se cursa?
     - horarios
+  
+- intent: materias_de
+  examples: |
+    - cuales son las materias que se dictan en [1](anio)?
+    - que materias hay en [2](anio)?
+    - materias de [3](anio)?
+    - que materias son dictadas en [4](anio)?
 
 - regex: materia
   examples: |
@@ -98,4 +105,4 @@ nlu:
     - martin
     - tincho
     - david
-    - juan francisco
+    - juan

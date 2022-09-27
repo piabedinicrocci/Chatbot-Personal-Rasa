@@ -12,6 +12,8 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+from swiplserver import PrologMQI, PrologThread
+
 import random
 import os.path
 import json
@@ -90,6 +92,46 @@ class ActionExtraerDatosHorarios(Action):
             mensaje="Los dias en que se cursa son: "+horarios[materia]['dia']+" de "+horarios[materia]['horario']
             dispatcher.utter_message(text=str(mensaje))
         else:
-            mensaje= "no es una materia que reconozca"
+            mensaje= "No es una materia que reconozca"
             dispatcher.utter_message(text=str(mensaje))
         return []
+
+class ActionPROLOGMateriasAnio(Action):
+
+    def name(self) -> Text:
+        return "action_materias_de_anio"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            with PrologMQI(port=8000) as mqi:
+                with mqi.create_thread() as prolog_thread:
+                        prolog_thread.query_async(r"consult('C:\\RASA Personal\\data\\PE.pl')", find_all=False)
+                        anio= next(tracker.get_latest_entity_values("anio"),None)
+                        if (int(anio) < 6):
+                            prolog_thread.query_async(f"materias_de({anio},Lista)", find_all=False)
+                            result = prolog_thread.query_async_result()[0]['Lista']
+                            dispatcher.utter_message(f"Materias de {anio} : \n")
+                            for materia in result:
+                                dispatcher.utter_message(text= f"- {materia}")
+                        else:
+                            dispatcher.utter_message(text= "La duracion de la carrera es de 5 años!")
+            return[]
+
+class ActionPROLOGMateriasCursando(Action):
+
+    def name(self) -> Text:
+        return "action_materias_cursando"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            with PrologMQI(port=8000) as mqi:
+                with mqi.create_thread() as prolog_thread:
+                        prolog_thread.query_async(r"consult('C:\\RASA Personal\\data\\PE.pl')", find_all=False)
+                        prolog_thread.query_async(f"materias_cursando(Lista)", find_all=False)
+                        result = prolog_thread.query_async_result()[0]['Lista']
+                        dispatcher.utter_message(f"Estoy cursando las 5 del 2do cuatri de 3er año de Sistemas: \n")
+                        for materia in result:
+                            dispatcher.utter_message(text= f"- {materia}")
+            return[]

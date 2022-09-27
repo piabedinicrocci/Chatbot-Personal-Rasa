@@ -7,6 +7,8 @@ stories:
   - intent: saludo
   - action: utter_saludo
   - intent: proximos_pasos
+    entities:
+      - nombre
   - action: utter_proximos_pasos
 
 - story: datos_personales_story
@@ -30,20 +32,31 @@ stories:
   - intent: finales_pendientes
   - action: utter_finales_pendientes
 
-- story: materias_story
-  steps:
-  - intent: materias_cursando
-  - action: utter_materias_cursando
-
 - story: materia_particular_story
   steps:
   - intent: estado_materia
+    entities:
+      - materia
   - action: action_estado_materia
   - intent: horarios_materia
   - action: action_horarios_materia
 
+- story: materias_cursando_story
+  steps:
+  - intent: materias_cursando
+  - action: action_materias_cursando
+
+- story: materias_de_story
+  steps:
+  - intent: materias_de
+    entities:
+      - anio
+  - action: action_materias_de_anio
+
 - story: saludo_final
   steps:
   - intent: despedida
+    entities:
+      - nombre
   - action: utter_despedida
 
