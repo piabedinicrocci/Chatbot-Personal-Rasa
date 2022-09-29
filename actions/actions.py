@@ -28,7 +28,7 @@ class ActionEstadoMateria(Action):
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          materia= tracker.latest_message['entities'][0]['value']
          if str(materia)=="Programacion Exploratoria":
-            message="Voy genial! Al dia!"
+            message="Por suerte voy genial, al dia! He comprendido todos los contenidos"
          elif str(materia)=="Investigacion Operativa":
             message="Voy re bien! Estoy al dia con los practicos"
          elif str(materia)=="Lenguajes de Programacion":
@@ -50,7 +50,7 @@ class ActionOpinionMateria(Action):
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          materia= tracker.get_slot("materia")
          if str(materia)=="Programacion Exploratoria" or str(materia)=="Bases de Datos":
-            message="Me encanta! me parece super util y necesaria"
+            message="Me parece una materia super interesante, la veo util y necesaria para el futuro"
          elif str(materia)=="Investigacion Operativa":
             message="Me gusta! creo que tiene contenidos aplicables en el futuro"
          elif str(materia)=="Lenguajes de Programacion" or str(materia)=="Sistemas Operativos":

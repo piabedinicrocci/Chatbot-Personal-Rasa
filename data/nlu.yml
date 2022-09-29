@@ -32,6 +32,8 @@ nlu:
     - de donde sos?
     - de donde eres?
     - donde naciste?
+    - de que ciudad sos?
+    - de que pueblo sos?
 
 - intent: fecha_nacimiento
   examples: |
@@ -82,6 +84,7 @@ nlu:
 - intent: opinion_materia
   examples: |
     - que opinas de esa materia?
+    - que opinas de la materia?
     - que opinas acerca de la materia?
     - que opinion tenes de la materia?
 
@@ -105,6 +108,8 @@ nlu:
   examples: |
     - ((([aA-zZ]\w+ *){1, })+(, )*){1, }
   #acepta espacios y comas
+
+  #[a-zA-Z]+\s[a-zA-Z]+ para NOMBRE: acepta 2 palabras separadas por un espacio mayus y minusc
 
 - lookup: nombre
   examples: |

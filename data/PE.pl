@@ -8,11 +8,11 @@ materias(6123,"Algebra Lineal",1,2).
 materias(6124,"Fisica General",1,2).
 materias(6125,"Matematica Discreta",1,2).
 materias(6211,"Ciencias de la Computacion II",2,1).
-materias(6212,"Analisis y Dise�o de Algoritmos I",2,1).
+materias(6212,"Analisis y Disenio de Algoritmos I",2,1).
 materias(6213,"Introduccion a la Arquitectura de Sistemas",2,1).
 materias(6214,"Analisis Matematico II",2,1).
 materias(6215,"Electricidad y Magnetismo",2,1).
-materias(6221,"Analisis y Dise�o de Algoritmos II",2,2).
+materias(6221,"Analisis y Disenio de Algoritmos II",2,2).
 materias(6222,"Comunicacion de Datos I",2,2).
 materias(6223,"Probabilidades y Estadistica",2,2).
 materias(6224,"Electronica Digital",2,2).
@@ -29,8 +29,8 @@ materias(6411,"Arquitectura de Computadoras y Tecnicas Digitales",4,1).
 materias(6412,"Teoria de la Informacion",4,1).
 materias(6413,"Comunicacion de Datos II",4,1).
 materias(6414,"Introduccion al Calculo Diferencial e Integral",4,1).
-materias(6421,"Dise�o de Sistemas de Software",4,2).
-materias(6422,"Dise�o de Compiladores I",4,2).
+materias(6421,"Disenio de Sistemas de Software",4,2).
+materias(6422,"Disenio de Compiladores I",4,2).
 materias(6511,"Ingenieria de Software",5,1).
 
 %materias que no tienen correlativas
