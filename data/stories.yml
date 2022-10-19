@@ -25,28 +25,35 @@ stories:
       - nombre
   - action: utter_despedida
 
-- story: datos_personales_story
+- story: lugar_origen_story
   steps:
   - intent: lugar_origen
   - action: utter_lugar_origen
+
+- story: fecha_nacimiento_story
+  steps:
   - intent: fecha_nacimiento
   - action: utter_fecha_nacimiento
+
+- story: signo_zodiacal_story
+  steps:
   - intent: signo_zodiacal
   - action: utter_signo_zodiacal
 
-- story: datos_academicos_story
+- story: estudio_en_curso_story
   steps:
   - intent: estudio_en_curso
   - action: utter_estudio_en_curso
+
+- story: datos_academicos_pos_story
+  steps:
   - intent: datos_estudio
   - action: utter_datos_estudio
   - intent: estado_positivo
   - action: utter_estado_positivo
 
-- story: datos_academicos2_story
+- story: datos_academicos_neg_story
   steps:
-  - intent: estudio_en_curso
-  - action: utter_estudio_en_curso
   - intent: datos_estudio
   - action: utter_datos_estudio
   - intent: estado_negativo
@@ -62,7 +69,7 @@ stories:
   - intent: materias_cursando
   - action: action_materias_cursando
 
-- story: materia_particular_story
+- story: materia_particular_opinion_story
   steps:
   - intent: estado_materia
     entities:
@@ -70,6 +77,13 @@ stories:
   - action: action_estado_materia
   - intent: opinion_materia
   - action: action_opinion_materia
+
+- story: materia_particular_horarios_story
+  steps:
+  - intent: estado_materia
+    entities:
+    - materia
+  - action: action_estado_materia
   - intent: horarios_materia
   - action: action_horarios_materia
 
