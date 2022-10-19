@@ -6,3 +6,8 @@ rules:
   steps:
   - intent: despedida
   - action: utter_despedida
+
+- rule: Say something anytime that the user's message is not understood
+  steps:
+  - intent: nlu_fallback
+  - action: utter_desconocido

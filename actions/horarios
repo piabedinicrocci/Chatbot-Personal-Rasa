@@ -1,0 +1,23 @@
+{
+    "Programacion Exploratoria": {
+        "dia": "miercoles",
+        "horario": "13hs a 16hs"
+    },
+    "Investigacion Operativa": {
+        "dia": "lunes",
+        "horario": "15hs a 17hs"
+    },
+    "Lenguajes de Programacion": {
+        "dia": "martes",
+        "horario": "13hs a 16hs"
+    },
+    "Bases de Datos": {
+        "dia": "lunes",
+        "horario": "9hs a 13hs"
+    },
+    "Sistemas Operativos": {
+        "dia": "martes",
+        "horario": "10hs a 12hs"
+    }
+
+}

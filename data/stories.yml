@@ -11,6 +11,13 @@ stories:
       - nombre
   - action: utter_proximos_pasos
 
+- story: ingresar_legajo
+  steps:
+  - intent: legajo_universitario
+    entities:
+      - legajo
+  - action: action_es_alumno
+
 - story: saludo_final
   steps:
   - intent: despedida
@@ -33,6 +40,20 @@ stories:
   - action: utter_estudio_en_curso
   - intent: datos_estudio
   - action: utter_datos_estudio
+  - intent: estado_positivo
+  - action: utter_estado_positivo
+
+- story: datos_academicos2_story
+  steps:
+  - intent: estudio_en_curso
+  - action: utter_estudio_en_curso
+  - intent: datos_estudio
+  - action: utter_datos_estudio
+  - intent: estado_negativo
+  - action: utter_estado_negativo
+
+- story: finales_pendientes_story
+  steps:
   - intent: finales_pendientes
   - action: utter_finales_pendientes
 
@@ -45,7 +66,7 @@ stories:
   steps:
   - intent: estado_materia
     entities:
-      - materia
+    - materia
   - action: action_estado_materia
   - intent: opinion_materia
   - action: action_opinion_materia
@@ -58,4 +79,40 @@ stories:
     entities:
       - anio
   - action: action_materias_de_anio
+
+  #GRUPAL
+- story: consultar_por_ejercicio_story
+  steps:
+  - intent: consultar_por_ejercicio
+  - action: action_consultar_por_ejercicio
+
+- story: consultar_por_ejercicio_otro_lo_tiene_story
+  steps:
+  - intent: consultar_por_ejercicio_otro_lo_tiene
+  # - action: action_consultar_por_ejercicio_otro_lo_tiene
+
+- story: consultar_por_ejercicio_otro_NO_lo_tiene_story
+  steps:
+  - intent: consultar_por_ejercicio_otro_NO_lo_tiene
+  # - action: action_consultar_por_ejercicio_otro_NO_lo_tiene
+
+- story: consultar_por_ejercicio_agradece_story
+  steps:
+  - intent: consultar_por_ejercicio_agradece
+  #- action: action_consultar_por_ejercicio_agradece
+
+- story: interactive_story_2
+  steps:
+  - intent: consultar_por_ejercicio
+    entities:
+    - inciso: '3'
+    - tp: '1'
+    - materia: analisis matematico 1
+  - slot_was_set:
+    - materia: analisis matematico 1
+  - slot_was_set:
+    - inciso: '1'
+  - slot_was_set:
+    - tp: '1'
+  - action: action_consultar_por_ejercicio
 

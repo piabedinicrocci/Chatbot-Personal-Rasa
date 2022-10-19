@@ -62,14 +62,14 @@ class OperarArchivo():
 
     @staticmethod
     def guardar(AGuardar):
-        with open(".\\actions\\datos","w") as archivo_descarga:
+        with open(".\\actions\\horarios","w") as archivo_descarga:
             json.dump(AGuardar, archivo_descarga, indent=4)
         archivo_descarga.close()
 
     @staticmethod
     def cargarArchivo(): 
-        if os.path.isfile(".\\actions\\datos"):
-            with open(".\\actions\\datos","r") as archivo_carga:
+        if os.path.isfile(".\\actions\\horarios"):
+            with open(".\\actions\\horarios","r") as archivo_carga:
                 retorno=json.load(archivo_carga)
                 archivo_carga.close()
         else:
@@ -130,3 +130,73 @@ class ActionPROLOGMateriasAnio(Action):
                         else:
                             dispatcher.utter_message(text= "La duracion de la carrera es de 5 años!")
             return[]
+
+
+class ActionEsAlumno(Action):
+
+     def name(self) -> Text:
+         return "action_es_alumno"
+
+     def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+         legajo= tracker.latest_message['entities'][0]['value']
+         #legajo= next(tracker.get_latest_entity_values("legajo"),None)
+         legajos= ["250456", "250197", "250173", "245846", "253069"]
+         if str(legajo) in legajos:
+            dispatcher.utter_message("Que queres saber acerca de mi?")
+            return [SlotSet("alumno",True)]
+         else:
+            dispatcher.utter_message("No sos alumno. Por favor retirate")
+            return [SlotSet("alumno",False)]
+
+#GRUPAL
+
+class OperarArchivoGrupal():
+
+    @staticmethod
+    def guardar(AGuardar):
+        with open(".\\actions\\ejercicios","w") as archivo_descarga:
+            json.dump(AGuardar, archivo_descarga, indent=4)
+        archivo_descarga.close()
+
+    @staticmethod
+    def cargarArchivo(): 
+        if os.path.isfile(".\\actions\\ejercicios"):
+            with open(".\\actions\\ejercicios","r") as archivo_carga:
+                retorno=json.load(archivo_carga)
+                archivo_carga.close()
+        else:
+            retorno={}
+        return retorno
+
+class Action_consultar_por_ejercicio(Action):  
+    def name(self) -> Text:
+        return "action_consultar_por_ejercicio"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # print("la materia por entidad es: " + str(next(tracker.get_latest_entity_values("materia"), None)))
+        # print("el tp de la materia es:" + str(next(tracker.get_latest_entity_values("tp"), None)))
+        # print("el inciso de la materia es:" + str(next(tracker.get_latest_entity_values("inciso"), None)))
+
+        tp = next(tracker.get_latest_entity_values("tp"), None)
+        inciso = next(tracker.get_latest_entity_values("inciso"), None)
+
+        if (next(tracker.get_latest_entity_values("materia"), None) != None):
+            materia = tracker.get_slot("materia")
+        else:
+            materia = None
+        if (materia):
+            try:
+                datos = OperarArchivoGrupal.cargarArchivo()
+                materiaLower = datos["tranformacionesDeNombresMaterias"][materia.lower()]
+                ejercicio = datos["ejercicios"][materiaLower][tp][inciso]["resolucion"]
+                dispatcher.utter_message(text="Si, ahi te lo paso", image=ejercicio)
+            except:
+                dispatcher.utter_message(response="utter_no_tengo_ejercicio")#, tp=tp,inciso=inciso, materia=materia)
+        else:
+            dispatcher.utter_message(response= "utter_no_conozco_materia")
+        return []

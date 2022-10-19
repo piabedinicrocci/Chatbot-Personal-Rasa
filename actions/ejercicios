@@ -1,0 +1,122 @@
+{
+    "ejercicios":{ 
+        "Introduccion a la Programacion 1":{ 
+        }, 
+        "Analisis Matematico 1":{ 
+        }, 
+        "Algebra 1":{ 
+        }, 
+        "Quimica":{ 
+        }, 
+        "Ciencias de la Computacion 1":{ 
+        }, 
+        "Introduccion a la Programacion 2":{ 
+        }, 
+        "Algebra Lineal":{ 
+            "1":{ 
+                "1":{"resolucion":"https://matleal.files.wordpress.com/2012/02/z-copia3.jpg"}, 
+                "3":{"resolucion":"https://matleal.files.wordpress.com/2012/02/z-copia3.jpg"} 
+            }, 
+            "2":{ 
+                "1":{"resolucion":"https://stickerly.pstatic.net/sticker_pack/sq7JdbX4wvSX209gTlZzPA/0GYBPY/35/6a1dca1c-f996-4990-91af-76005f5950e9.png"} 
+            }, 
+            "3":{ 
+                "3":{"resolucion":"https://stickerly.pstatic.net/sticker_pack/sq7JdbX4wvSX209gTlZzPA/0GYBPY/35/6a1dca1c-f996-4990-91af-76005f5950e9.png"} 
+            } 
+        }, 
+        "Fisica General":{ 
+        }, 
+        "Matematica Discreta":{ 
+        }, 
+        "Ciencias de la Computacion 2":{ 
+        }, 
+        "Analisis y Diseño de Algoritmos 1":{ 
+        }, 
+        "Introduccion a la Arquitectura de Sistemas":{ 
+        }, 
+        "Analisis Matematico 2":{ 
+        }, 
+        "Electricidad y Magnetismo":{ 
+        }, 
+        "Analisis y Diseño de Algoritmos 2":{ 
+        }, 
+        "Comunicacion de Datos 1":{ 
+        }, 
+        "Probabilidad y Estadistica":{ 
+        }, 
+        "Electronica Digital":{ 
+        }, 
+        "Ingles":{ 
+        }, 
+        "Programacion Orientada a Objetos":{ 
+        }, 
+        "Estructura de Almacenamiento de Datos":{ 
+        }, 
+        "Metodologias de Desarrollo de Software":{ 
+        }, 
+        "Arquitectura de Computadoras":{ 
+        }, 
+        "Programacion Exploratoria":{ 
+        }, 
+        "Base de Datos":{ 
+        }, 
+        "Lenguajes de Programacion":{ 
+        }, 
+        "Sistemas Operativos":{ 
+        }, 
+        "Investigacion Operativa":{ 
+        }, 
+        "Arquitectura de Computadores y Tecnicas Digitales":{ 
+        }, 
+        "Teoria de la Informacion":{ 
+        }, 
+        "Comunicacion de Datos 2":{ 
+        }, 
+        "Introduccion al Calculo Diferencial e Integral":{ 
+        }, 
+        "Diseño de Sistemas de Software":{ 
+        }, 
+        "Diseño de Compiladores 1":{ 
+        }, 
+        "Ingenieria de Software":{ 
+        } 
+    },
+    "tranformacionesDeNombresMaterias": {
+        "introduccion a la programacion 1":"Introduccion a la Programacion 1",
+        "analisis matematico 1":"Analisis Matematico 1",
+        "algebra 1":"Algebra 1",
+        "quimica":"Quimica",
+        "ciencias de la computacion 1":"Ciencias de la Computacion 1",
+        "introduccion a la programacion 2":"Introduccion a la Programacion 2",
+        "algebra lineal":"Algebra Lineal",
+        "fisica general":"Fisica General",
+        "matematica discreta":"Matematica Discreta",
+        "ciencias de la computacion 2":"Ciencias de la Computacion 2",
+        "analisis y disenio de algoritmos 1":"Analisis y Disenio de Algoritmos 1",
+        "introduccion a la arquitectura de sistemas":"Introduccion a la Arquitectura de Sistemas",
+        "analisis matematico 2":"Analisis Matematico 2",
+        "electricidad y magnetismo":"Electricidad y Magnetismo",
+        "analisis y disenio de algoritmos 2":"Analisis y Disenio de Algoritmos 2",
+        "comunicacion de datos 1":"Comunicacion de Datos 1",
+        "probabilidad y estadistica":"Probabilidad y Estadistica",
+        "electronica digital":"Electronica Digital",
+        "ingles":"Ingles",
+        "programacion orientada a objetos":"Programacion Orientada a Objetos",
+        "estructura de alamcenamiento de datos":"Estructura de Almacenamiento de Datos",
+        "metodologias de desarrollo de software":"Metodologias de Desarrollo de Software",
+        "arquitectura de computadoras":"Arquitectura de Computadoras",
+        "programacion exploratoria":"Programacion Exploratoria",
+        "base de datos":"Base de Datos",
+        "bases de datos":"Base de Datos",
+        "lenguajes de programacion":"Lenguajes de Programacion",
+        "sistemas operativos":"Sistemas Operativos",
+        "investigacion operativa":"Investigacion Operativa",
+        "arquitectura de computador es y tecnicas digitales":"Arquitectura de Computadores y Tecnicas Digitales",
+        "teoria de la informacion":"Teoria de la Informacion",
+        "comunicacion de datos 2":"Comunicacion de Datos 2",
+        "introduccion al calculo diferencial e integral":"Introduccion al Calculo Diferencial e Integral",
+        "disenioo de sistemas de software":"Disenio de Sistemas de Software",
+        "disenio de compiladores":"Disenio de Compiladores 1",
+        "ingenieria de software":"Ingenieria de Software"        
+    }
+}

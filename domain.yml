@@ -4,71 +4,168 @@ intents:
   - saludo
   - despedida
   - proximos_pasos
+  - legajo_universitario
   - lugar_origen
   - fecha_nacimiento
   - signo_zodiacal
   - estudio_en_curso
+  - estado_positivo
+  - estado_negativo
   - datos_estudio
   - finales_pendientes
   - materias_cursando
   - estado_materia
   - opinion_materia
   - horarios_materia
-  - materias_de
+  - materias_de 
+  #GRUPAL
+  - consultar_por_ejercicio_agradece
+  - consultar_por_ejercicio_otro_lo_tiene
+  - consultar_por_ejercicio_otro_NO_lo_tiene
+  - consultar_por_ejercicio
 
 entities:
   - nombre
+  - legajo
   - materia
   - anio
+  #GRUPAL
+  - inciso
+  - tp
 
 actions:
+  - action_es_alumno
+  - action_estado_animo
   - action_estado_materia
   - action_opinion_materia
   - action_horarios_materia
   - action_materias_cursando
   - action_materias_de_anio
+  #GRUPAL
+  - action_consultar_sos_un_bot
+  - action_consultar_por_ejercicio_agradece
+  - action_consultar_por_ejercicio_otro_lo_tiene
+  - action_consultar_por_ejercicio_otro_NO_lo_tiene
+  - action_consultar_por_ejercicio
 
 slots:
   nombre:
-      type: text
-      mappings:
-        - type: from_entity
-          entity: nombre
-
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nombre
   materia:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: materia
+  alumno:
+    type: bool
+    initial_value: False
+    mappings:
+      - type: custom
+  #GRUPAL
+  inciso:
       type: text
       mappings:
         - type: from_entity
-          entity: materia
+          entity: inciso
+  tp:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: tp
 
 responses:
   utter_saludo:
-  - text: "Hola! Soy Pia! Quien eres tu?"
+  - text: "Hola! Soy Pia! Quien eres tu?😁​"
 
   utter_despedida:
-  - text: "Adios {nombre}!"
+  - text: "Adios {nombre}!​👋​​"
 
   utter_proximos_pasos:
-  - text: "Un gusto {nombre}! Que quieres saber acerca de mi?"
+  - text: "Un gusto {nombre}! Verifiquemos que seas un alumno: ingresa tu LU🤓"
 
   utter_lugar_origen:
-  - text: "Soy de Azul, pcia. de Bs As, pero actualmente vivo en Tandil"
+    - condition:
+        - type: slot
+          name: alumno
+          value: false
+      text: "No sos alumno. Solo puedo responderte que materias estoy cursando, como me esta yendo con una de esas materias, mi opinion y horarios sobre esa materia y las materias de Ing de un año dado"
+    - text: "Soy de Azul, pcia. de Bs As, pero actualmente vivo en Tandil"
 
   utter_fecha_nacimiento:
-  - text: "Mi cumple es el 8 de febrero, naci en 2022 (podras deducir mi edad :D)"
-  - text: "Tengo 20 años! Naci el 8/2/2002"
+    - condition:
+        - type: slot
+          name: alumno
+          value: false
+      text: "No sos alumno. Solo puedo responderte que materias estoy cursando, como me esta yendo con una de esas materias, mi opinion y horarios sobre esa materia y las materias de Ing de un año dado"
+    - text: "Naci el 8/2/2002! tengo 20 años :D"
 
   utter_signo_zodiacal:
-  - text: "Soy Acuario, pero no le doy mucha bola a esas cosas ;) "
+    - condition:
+        - type: slot
+          name: alumno
+          value: false
+      text: "No sos alumno. Solo puedo responderte que materias estoy cursando, como me esta yendo con una de esas materias, mi opinion y horarios sobre esa materia y las materias de Ing de un año dado"
+    - text: "Soy Acuario, pero no le doy mucha bola a esas cosas ;) "
 
   utter_estudio_en_curso:
-  - text: "Estoy estudiando Ingenieria de Sistemas y TUDAI (Tecnicatura Univ. en Desarrollo de Aplicaciones Informaticas). Además, soy ayudante de una materia de TUDAI (TIO)"
+    - condition:
+        - type: slot
+          name: alumno
+          value: false
+      text: "No sos alumno. Solo puedo responderte que materias estoy cursando, como me esta yendo con una de esas materias, mi opinion y horarios sobre esa materia y las materias de Ing de un año dado"
+    - text: "Estoy estudiando Ingenieria de Sistemas y TUDAI (Tecnicatura Univ. en Desarrollo de Aplicaciones Informaticas). Además, soy ayudante de una materia de TUDAI (TIO)"
 
   utter_datos_estudio:
-  - text: "Yyy bastante bien, empece la carrera en 2020, voy al dia con las cursadas y debo 2 finales del cuatrimestre pasado"
+    - condition:
+        - type: slot
+          name: alumno
+          value: false
+      text: "No sos alumno. Solo puedo responderte que materias estoy cursando, como me esta yendo con una de esas materias, mi opinion y horarios sobre esa materia y las materias de Ing de un año dado"
+    - text: "Yyy bastante bien, empece la carrera en 2020, voy al dia con las cursadas y debo 2 finales del cuatrimestre pasado. Y vos que onda?"
+
+  utter_estado_positivo:
+    - condition:
+        - type: slot
+          name: alumno
+          value: false
+      text: "No sos alumno. Solo puedo responderte que materias estoy cursando, como me esta yendo con una de esas materias, mi opinion y horarios sobre esa materia y las materias de Ing de un año dado"
+    - text: "Esooo! Me alegro un monton, segui asi!💪​"
+      image: "https://pbs.twimg.com/media/EiTyr-4WsAEMlGj.jpg"
+
+  utter_estado_negativo:
+    - condition:
+        - type: slot
+          name: alumno
+          value: false
+      text: "No sos alumno. Solo puedo responderte que materias estoy cursando, como me esta yendo con una de esas materias, mi opinion y horarios sobre esa materia y las materias de Ing de un año dado"
+    - text: "No te pongas mal🥺​ ya te va a ir mejor!"
+      image: "https://pbs.twimg.com/media/E3neN9pXIAceCd-.jpg"
 
   utter_finales_pendientes:
-  - text: "Me quedan por dar Estructuras de Almacenamiento de Datos y Programacion Orientada a Objetos"
+    - condition:
+        - type: slot
+          name: alumno
+          value: false
+      text: "No sos alumno. Solo puedo responderte que materias estoy cursando, como me esta yendo con una de esas materias, mi opinion y horarios sobre esa materia y las materias de Ing de un año dado"
+    - text: "Me quedan por dar Estructuras de Almacenamiento de Datos y Programacion Orientada a Objetos"
+
+  #FALLBACK
+  utter_desconocido:
+  - text: "No entendi, porfa repetime lo que quisiste decir"
+
+  #GRUPAL
+  utter_no_conozco_materia:
+  - text: No conozco esa materia
+  - text: No conozco esa materia, seguro que se escribe asi?
+  
+  # utter_paso_el_ejercicio:
+  # - text: Si, ahí te lo paso {datos}
+  
+  utter_no_tengo_ejercicio:
+  - text: Nop, no lo hice
 
 session_config:
   session_expiration_time: 60
