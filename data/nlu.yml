@@ -1,6 +1,7 @@
 version: "3.1"
 
 nlu:
+
 - intent: saludo
   examples: |
     - hola!
@@ -17,8 +18,10 @@ nlu:
     - adios
     - chausito
     - chauchis
-    - adioos
+    - adioos!
     - seguimos luego
+    - hasta luego
+    - nos vemos despues
 
 - intent: proximos_pasos
   examples: |
@@ -51,11 +54,14 @@ nlu:
     - cuando naciste?
     - cual es tu fecha de nacimiento?
     - que edad tienes?
+    - cual es tu edad?
+    - cuando es tu cumpleanios?
 
 - intent: signo_zodiacal
   examples: |
     - cual es tu signo del zodiaco?
     - cual es tu signo zodiacal?
+    - decime tu signo zodiacal
 
 - intent: estudio_en_curso
   examples: |
@@ -100,6 +106,7 @@ nlu:
     - que finales te quedan por dar?
     - cuales son los finales que debes?
     - que finales te quedaron pendientes?
+    - cuales finales tenes que dar?
 
 - intent: materias_cursando
   examples: |
@@ -113,8 +120,8 @@ nlu:
   examples: |
     - como venis con [Programacion Exploratoria](materia)?
     - como venis con [Investigacion Operativa](materia)?
-    - como venis con [Lenguajes de Programacion](materia)?
-    - como venis con [Bases de Datos](materia)?
+    - como te esta yendo con [Lenguajes de Programacion](materia)?
+    - que tal te esta yendo con [Bases de Datos](materia)?
     - como venis con [Sistemas Operativos](materia)?
 
 - intent: opinion_materia
@@ -139,6 +146,12 @@ nlu:
     - que materias hay en [2](anio)?
     - materias de [3](anio)?
     - que materias son dictadas en [4](anio)?
+    - que materias se dictan en [5](anio)?
+    - cuales materias son dictadas en [2](anio)?
+    - cuales son las materias de [3](anio)?
+    - decime las materias de [4](anio)
+    - cuales materias se dictan en [5](anio)?
+    - que materias son de [1](anio)?
 
   #acepta espacios y comas
 - regex: materia
@@ -172,7 +185,7 @@ nlu:
     - no, no tengo ese inciso 
     - no, no lo tengo
     - no, no tengo ese tp
-    - noup, no lo tengo
+    - nop, no lo hice
     - no lo hice ese inciso
     - no lo hice ese tp
     - no lo hice
@@ -236,11 +249,11 @@ nlu:
     - fisica general
     - matematica discreta
     - ciencias de la computacion 2
-    - analisis y diseño de algoritmos 1
+    - analisis y disenio de algoritmos 1
     - introduccion a la arquitectura de sistemas
     - analisis matematico 2
     - electricidad y magnetismo
-    - analisis y diseño de algoritmos 2
+    - analisis y disenio de algoritmos 2
     - comunicacion de datos 1
     - probabilidad y estadistica
     - electronica digital
@@ -257,6 +270,6 @@ nlu:
     - teoria de la informacion
     - comunicacion de datos 2
     - introduccion al calculo diferencial e integral
-    - diseño de sistemas de software
-    - diseño de compiladores
+    - disenio de sistemas de software
+    - disenio de compiladores
     - ingenieria de software

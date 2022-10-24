@@ -1,0 +1,22 @@
+[
+  {
+    "name": "inciso",
+    "pattern": "[1-9]{1}"
+  },
+  {
+    "name": "materia",
+    "pattern": "((([aA-zZ]\\w+ *){1, })+(, )*){1, }"
+  },
+  {
+    "name": "tp",
+    "pattern": "[1-9]{1}"
+  },
+  {
+    "name": "nombre",
+    "pattern": "(\\bpichu\\b|\\bmartin\\b|\\btincho\\b|\\bdavid\\b|\\bjuan\\b|\\banalia\\b|\\bmatias\\b)"
+  },
+  {
+    "name": "materia",
+    "pattern": "(\\bintroduccion\\ a\\ la\\ programacion\\ 1\\b|\\banalisis\\ matematico\\ 1\\b|\\balgebra\\ 1\\b|\\bquimica\\b|\\bciencias\\ de\\ la\\ computacion\\ 1\\b|\\bintroduccion\\ a\\ la\\ programacion\\ 2\\b|\\balgebra\\ lineal\\b|\\bfisica\\ general\\b|\\bmatematica\\ discreta\\b|\\bciencias\\ de\\ la\\ computacion\\ 2\\b|\\banalisis\\ y\\ disenio\\ de\\ algoritmos\\ 1\\b|\\bintroduccion\\ a\\ la\\ arquitectura\\ de\\ sistemas\\b|\\banalisis\\ matematico\\ 2\\b|\\belectricidad\\ y\\ magnetismo\\b|\\banalisis\\ y\\ disenio\\ de\\ algoritmos\\ 2\\b|\\bcomunicacion\\ de\\ datos\\ 1\\b|\\bprobabilidad\\ y\\ estadistica\\b|\\belectronica\\ digital\\b|\\bprogramacion\\ orientada\\ a\\ objetos\\b|\\bestructura\\ de\\ alamcenamiento\\ de\\ datos\\b|\\bmetodologias\\ de\\ desarrollo\\ de\\ software\\b|\\barquitectura\\ de\\ computadoras\\b|\\bprogramacion\\ exploratoria\\b|\\bbase\\ de\\ datos\\b|\\blenguajes\\ de\\ programacion\\b|\\bsistemas\\ operativos\\b|\\binvestigacion\\ operativa\\b|\\barquitectura\\ de\\ computadores\\ y\\ tecnicas\\ digitales\\b|\\bteoria\\ de\\ la\\ informacion\\b|\\bcomunicacion\\ de\\ datos\\ 2\\b|\\bintroduccion\\ al\\ calculo\\ diferencial\\ e\\ integral\\b|\\bdisenio\\ de\\ sistemas\\ de\\ software\\b|\\bdisenio\\ de\\ compiladores\\b|\\bingenieria\\ de\\ software\\b)"
+  }
+]

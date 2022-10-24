@@ -91,7 +91,7 @@ stories:
   steps:
   - intent: materias_de
     entities:
-      - anio
+      - anio: '4'
   - action: action_materias_de_anio
 
   #GRUPAL
@@ -129,4 +129,3 @@ stories:
   - slot_was_set:
     - tp: '1'
   - action: action_consultar_por_ejercicio
-

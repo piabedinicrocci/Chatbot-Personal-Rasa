@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-anio",
+      "2": "I-anio",
+      "3": "L-anio",
+      "4": "U-anio",
+      "5": "B-inciso",
+      "6": "I-inciso",
+      "7": "L-inciso",
+      "8": "U-inciso",
+      "9": "B-materia",
+      "10": "I-materia",
+      "11": "L-materia",
+      "12": "U-materia",
+      "13": "B-nombre",
+      "14": "I-nombre",
+      "15": "L-nombre",
+      "16": "U-nombre",
+      "17": "B-tp",
+      "18": "I-tp",
+      "19": "L-tp",
+      "20": "U-tp",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-anio": 1,
+      "I-anio": 2,
+      "L-anio": 3,
+      "U-anio": 4,
+      "B-inciso": 5,
+      "I-inciso": 6,
+      "L-inciso": 7,
+      "U-inciso": 8,
+      "B-materia": 9,
+      "I-materia": 10,
+      "L-materia": 11,
+      "U-materia": 12,
+      "B-nombre": 13,
+      "I-nombre": 14,
+      "L-nombre": 15,
+      "U-nombre": 16,
+      "B-tp": 17,
+      "I-tp": 18,
+      "L-tp": 19,
+      "U-tp": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

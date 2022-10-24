@@ -1,6 +1,13 @@
 {
     "ejercicios":{ 
         "Introduccion a la Programacion 1":{ 
+            "1":{ 
+                "6":{"resolucion":"http://2.bp.blogspot.com/-wXckJ-MIJcw/T4-KFIVSoRI/AAAAAAAAANQ/x3B_cm9EeGQ/s1600/ejercicio4.png"} 
+            }, 
+            "4":{ 
+                "8":{"resolucion":"https://bydalonline.files.wordpress.com/2020/07/b811a-pascal1.png"}, 
+                "9":{"resolucion":"http://1.bp.blogspot.com/-vu88tbp_1vM/UKg5RYyoiCI/AAAAAAAAAYg/nn-DQ5cSab0/s1600/Vectores+-+Ejercicio+2.png"} 
+            }
         }, 
         "Analisis Matematico 1":{ 
         }, 
@@ -15,13 +22,13 @@
         "Algebra Lineal":{ 
             "1":{ 
                 "1":{"resolucion":"https://matleal.files.wordpress.com/2012/02/z-copia3.jpg"}, 
-                "3":{"resolucion":"https://matleal.files.wordpress.com/2012/02/z-copia3.jpg"} 
+                "3":{"resolucion":"https://2.bp.blogspot.com/-d0pcv8LtirA/TV5iUffvRQI/AAAAAAAAAf8/PkWsztjTO3o/s1600/transformacion_lineal_problemas_2.gif"} 
             }, 
             "2":{ 
-                "1":{"resolucion":"https://stickerly.pstatic.net/sticker_pack/sq7JdbX4wvSX209gTlZzPA/0GYBPY/35/6a1dca1c-f996-4990-91af-76005f5950e9.png"} 
+                "1":{"resolucion":"https://static.filadd.com/files/f%2380577/html/external_resources/bg1.png"} 
             }, 
             "3":{ 
-                "3":{"resolucion":"https://stickerly.pstatic.net/sticker_pack/sq7JdbX4wvSX209gTlZzPA/0GYBPY/35/6a1dca1c-f996-4990-91af-76005f5950e9.png"} 
+                "2":{"resolucion":"https://matleal.files.wordpress.com/2012/09/01-resuelto.jpg"} 
             } 
         }, 
         "Fisica General":{ 
